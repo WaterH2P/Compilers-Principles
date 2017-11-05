@@ -1,0 +1,22 @@
+< KeyWord , private >
+< KeyWord , boolean >
+< Identifier , isKeyWord >
+< Separator , ( >
+< KeyWord , String >
+< Identifier , word >
+< Separator , ) >
+< Separator , { >
+< KeyWord , String >
+< Identifier , js >
+< Operator , = >
+< Sentence , "hello js!" >
+< Separator , ; >
+< KeyWord , int >
+< Identifier , std >
+< Operator , = >
+< Number , 980 >
+< Separator , ; >
+< KeyWord , return >
+< KeyWord , false >
+< Separator , ; >
+< Separator , } >

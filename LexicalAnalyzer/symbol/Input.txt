@@ -1,0 +1,5 @@
+private boolean isKeyWord (String word ){
+String js = "hello js!";
+int std=980;
+return false;
+}
