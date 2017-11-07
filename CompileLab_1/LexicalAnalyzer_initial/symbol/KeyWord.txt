@@ -1,0 +1,6 @@
+public private protected
+try catch
+true false
+int String float double
+if else for while do
+return break continue

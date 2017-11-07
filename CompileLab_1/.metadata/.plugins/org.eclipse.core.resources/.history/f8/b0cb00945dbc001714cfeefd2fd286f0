@@ -1,0 +1,31 @@
+package symbol;
+
+/**
+ * @author: hzp
+ * @date: 2017/10/29 上午11:20
+ * @description:
+ */
+public class Token{
+    private String value = "";
+    private String Tag = "";
+    private final String defaultTag = "Token";
+    private int row = -1;
+
+    Token(){
+        this.Tag = defaultTag;
+    }
+    Token(Stirng Tag, int row){
+        this.Tag = Tag;
+        this.row = row;
+    }
+
+    public String getValue(){
+        return this.value;
+    }
+    public String getTag(){
+        return this.Tag;
+    }
+    public int getRow(){
+        return this.row;
+    }
+}

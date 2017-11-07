@@ -1,0 +1,12 @@
+package Java.symbol;
+
+/**
+ * @author: hzp
+ * @date: 2017/10/29 上午11:33
+ * @description:
+ */
+public class Number extends Token{
+    Number(){
+        Super();
+    }
+}

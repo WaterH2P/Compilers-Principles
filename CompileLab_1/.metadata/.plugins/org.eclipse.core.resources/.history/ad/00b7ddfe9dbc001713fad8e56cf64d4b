@@ -1,0 +1,14 @@
+package symbol;
+
+/**
+ * @author: hzp
+ * @date: 2017/10/29 上午11:33
+ * @description:
+ */
+public class Number extends Token{
+	private String Tag = "Number";
+
+    Number(int row){
+    	super(row, this.Tag);	
+    }
+}
