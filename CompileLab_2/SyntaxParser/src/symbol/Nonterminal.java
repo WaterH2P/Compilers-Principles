@@ -111,4 +111,12 @@ public class Nonterminal {
 		System.out.println( "Follow: " + this.Follow );
 		System.out.println();
 	}
+	
+	public String output(){
+		String result = this.Vn + "\n";
+		result += "First: " + this.First + "\n";
+		result += "Follow: " + this.Follow + "\n";
+		result += "\n";
+		return result;
+	}
 }

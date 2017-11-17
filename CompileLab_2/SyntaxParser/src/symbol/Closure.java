@@ -28,4 +28,13 @@ public class Closure {
 		}
 		System.out.println();
 	}
+	
+	public String output(){
+		String result = "";
+		for( Expression expression : this.expressions ){
+			result += expression.output();
+		}
+		result += "\n";
+		return result;
+	}
 }
