@@ -1,0 +1,346 @@
+Vn: [S, E, T, F]
+Vt: [+, *, (, ), a, $]
+
+Vn Expression 
+S -> .E , []
+E -> .E+T , []
+E -> .T , []
+T -> .T*F , []
+T -> .F , []
+F -> .(E) , []
+F -> .a , []
+
+T -> .T*F , []
+T -> .F , []
+F -> .(E) , []
+F -> .a , []
+
+E -> .E+T , []
+E -> .T , []
+T -> .T*F , []
+T -> .F , []
+F -> .(E) , []
+F -> .a , []
+
+F -> .(E) , []
+F -> .a , []
+
+S
+First: [(, a]
+Follow: [$]
+
+E
+First: [(, a]
+Follow: [$, +, )]
+
+T
+First: [(, a]
+Follow: [$, +, ), *]
+
+F
+First: [(, a]
+Follow: [$, +, ), *]
+
+State 0
+Expression: 
+S -> .E , [$]
+E -> .E+T , [+, $]
+E -> .T , [+, $]
+T -> .T*F , [*, +, $]
+T -> .F , [*, +, $]
+F -> .(E) , [*, +, $]
+F -> .a , [*, +, $]
+Action: 
+through a to 5
+through ( to 4
+Goto: 
+through T to 2
+through E to 1
+through F to 3
+
+State 1
+Expression: 
+S -> E. , [$]
+E -> E.+T , [+, $]
+Action: 
+through + to 6
+Goto: 
+
+State 2
+Expression: 
+E -> T. , [+, $]
+T -> T.*F , [*, +, $]
+Action: 
+through * to 7
+Goto: 
+
+State 3
+Expression: 
+T -> F. , [*, +, $]
+Action: 
+Goto: 
+
+State 4
+Expression: 
+F -> (.E) , [*, +, $]
+E -> .E+T , [+, )]
+E -> .T , [+, )]
+T -> .T*F , [*, +, )]
+T -> .F , [*, +, )]
+F -> .(E) , [*, +, )]
+F -> .a , [*, +, )]
+Action: 
+through a to 12
+through ( to 11
+Goto: 
+through T to 9
+through E to 8
+through F to 10
+
+State 5
+Expression: 
+F -> a. , [*, +, $]
+Action: 
+Goto: 
+
+State 6
+Expression: 
+E -> E+.T , [+, $]
+T -> .T*F , [*, +, $]
+T -> .F , [*, +, $]
+F -> .(E) , [*, +, $]
+F -> .a , [*, +, $]
+Action: 
+through a to 5
+through ( to 4
+Goto: 
+through T to 13
+through F to 3
+
+State 7
+Expression: 
+T -> T*.F , [*, +, $]
+F -> .(E) , [*, +, $]
+F -> .a , [*, +, $]
+Action: 
+through a to 5
+through ( to 4
+Goto: 
+through F to 14
+
+State 8
+Expression: 
+F -> (E.) , [*, +, $]
+E -> E.+T , [+, )]
+Action: 
+through ) to 15
+through + to 16
+Goto: 
+
+State 9
+Expression: 
+E -> T. , [+, )]
+T -> T.*F , [*, +, )]
+Action: 
+through * to 17
+Goto: 
+
+State 10
+Expression: 
+T -> F. , [*, +, )]
+Action: 
+Goto: 
+
+State 11
+Expression: 
+F -> (.E) , [*, +, )]
+E -> .E+T , [+, )]
+E -> .T , [+, )]
+T -> .T*F , [*, +, )]
+T -> .F , [*, +, )]
+F -> .(E) , [*, +, )]
+F -> .a , [*, +, )]
+Action: 
+through a to 12
+through ( to 11
+Goto: 
+through T to 9
+through E to 18
+through F to 10
+
+State 12
+Expression: 
+F -> a. , [*, +, )]
+Action: 
+Goto: 
+
+State 13
+Expression: 
+E -> E+T. , [+, $]
+T -> T.*F , [*, +, $]
+Action: 
+through * to 7
+Goto: 
+
+State 14
+Expression: 
+T -> T*F. , [*, +, $]
+Action: 
+Goto: 
+
+State 15
+Expression: 
+F -> (E). , [*, +, $]
+Action: 
+Goto: 
+
+State 16
+Expression: 
+E -> E+.T , [+, )]
+T -> .T*F , [*, +, )]
+T -> .F , [*, +, )]
+F -> .(E) , [*, +, )]
+F -> .a , [*, +, )]
+Action: 
+through a to 12
+through ( to 11
+Goto: 
+through T to 19
+through F to 10
+
+State 17
+Expression: 
+T -> T*.F , [*, +, )]
+F -> .(E) , [*, +, )]
+F -> .a , [*, +, )]
+Action: 
+through a to 12
+through ( to 11
+Goto: 
+through F to 20
+
+State 18
+Expression: 
+F -> (E.) , [*, +, )]
+E -> E.+T , [+, )]
+Action: 
+through ) to 21
+through + to 16
+Goto: 
+
+State 19
+Expression: 
+E -> E+T. , [+, )]
+T -> T.*F , [*, +, )]
+Action: 
+through * to 17
+Goto: 
+
+State 20
+Expression: 
+T -> T*F. , [*, +, )]
+Action: 
+Goto: 
+
+State 21
+Expression: 
+F -> (E). , [*, +, )]
+Action: 
+Goto: 
+
+                            PPT                               
+State |  +    *    (    )    a    $   |  S    E    T    F  
+  0   |            S4        S5       |      G1   G2   G3  
+  1   |  S6                       R0  |                    
+  2   |  R2   S7                  R2  |                    
+  3   |  R4   R4                  R4  |                    
+  4   |            S11       S12      |      G8   G9   G10 
+  5   |  R6   R6                  R6  |                    
+  6   |            S4        S5       |           G13  G3  
+  7   |            S4        S5       |                G14 
+  8   |  S16            S15           |                    
+  9   |  R2   S17       R2            |                    
+  10  |  R4   R4        R4            |                    
+  11  |            S11       S12      |      G18  G9   G10 
+  12  |  R6   R6        R6            |                    
+  13  |  R1   S7                  R1  |                    
+  14  |  R3   R3                  R3  |                    
+  15  |  R5   R5                  R5  |                    
+  16  |            S11       S12      |           G19  G10 
+  17  |            S11       S12      |                G20 
+  18  |  S16            S21           |                    
+  19  |  R1   S17       R1            |                    
+  20  |  R3   R3        R3            |                    
+  21  |  R5   R5        R5            |                    
+
+Step 0 : 
+Stack State: [0]                           [a, +, a, *, a, $]
+Stack Chars: [$]
+Step 1 : S5
+Stack State: [0, 5]                        [+, a, *, a, $]
+Stack Chars: [$, a]
+Step 2 : R6
+Stack State: [0]                           [+, a, *, a, $]
+Stack Chars: [$, F]
+Step 3 : G3
+Stack State: [0, 3]                        [+, a, *, a, $]
+Stack Chars: [$, F]
+Step 4 : R4
+Stack State: [0]                           [+, a, *, a, $]
+Stack Chars: [$, T]
+Step 5 : G2
+Stack State: [0, 2]                        [+, a, *, a, $]
+Stack Chars: [$, T]
+Step 6 : R2
+Stack State: [0]                           [+, a, *, a, $]
+Stack Chars: [$, E]
+Step 7 : G1
+Stack State: [0, 1]                        [+, a, *, a, $]
+Stack Chars: [$, E]
+Step 8 : S6
+Stack State: [0, 1, 6]                     [a, *, a, $]
+Stack Chars: [$, E, +]
+Step 9 : S5
+Stack State: [0, 1, 6, 5]                  [*, a, $]
+Stack Chars: [$, E, +, a]
+Step 10 : R6
+Stack State: [0, 1, 6]                     [*, a, $]
+Stack Chars: [$, E, +, F]
+Step 11 : G3
+Stack State: [0, 1, 6, 3]                  [*, a, $]
+Stack Chars: [$, E, +, F]
+Step 12 : R4
+Stack State: [0, 1, 6]                     [*, a, $]
+Stack Chars: [$, E, +, T]
+Step 13 : G13
+Stack State: [0, 1, 6, 13]                 [*, a, $]
+Stack Chars: [$, E, +, T]
+Step 14 : S7
+Stack State: [0, 1, 6, 13, 7]              [a, $]
+Stack Chars: [$, E, +, T, *]
+Step 15 : S5
+Stack State: [0, 1, 6, 13, 7, 5]           [$]
+Stack Chars: [$, E, +, T, *, a]
+Step 16 : R6
+Stack State: [0, 1, 6, 13, 7]              [$]
+Stack Chars: [$, E, +, T, *, F]
+Step 17 : G14
+Stack State: [0, 1, 6, 13, 7, 14]          [$]
+Stack Chars: [$, E, +, T, *, F]
+Step 18 : R3
+Stack State: [0, 1, 6]                     [$]
+Stack Chars: [$, E, +, T]
+Step 19 : G13
+Stack State: [0, 1, 6, 13]                 [$]
+Stack Chars: [$, E, +, T]
+Step 20 : R1
+Stack State: [0]                           [$]
+Stack Chars: [$, E]
+Step 21 : G1
+Stack State: [0, 1]                        [$]
+Stack Chars: [$, E]
+Step 22 : R0
+Stack State: [0, 1]                        [$]
+Stack Chars: [$, E]
+
+Accept

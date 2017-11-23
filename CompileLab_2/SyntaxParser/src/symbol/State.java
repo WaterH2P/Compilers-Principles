@@ -121,7 +121,7 @@ public class State {
 	}
 	
 	// 计算预测符
-	public void calPredictChar(){
+	private final void calPredictChar(){
 		ArrayList<Character> VnHasCal = new ArrayList<>();
 		ArrayList<Expression> exps = this.getExpressions();
 		Expression exp = exps.get(0);

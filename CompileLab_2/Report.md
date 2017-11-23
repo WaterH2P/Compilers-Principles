@@ -24,6 +24,9 @@
 
 可修改：
 	symbol/CFGInput.txt
+		不支持空值
+		推导符号使用: ->
+		[A-Z]: 默认非终结符
 	symbol/InputToken.txt
 Run：
 	scr/logic/Main.main()
@@ -93,6 +96,10 @@ State:
 ```
 
 ### 8 .Use cases on running
+
+```
+见 Example.txt
+```
 
 ### 9. Problems occurred and related solutions
 
